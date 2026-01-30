@@ -1,0 +1,295 @@
+<!-- EDITORIAL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CooffeeBeen - Your Daily Ritual</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .bg-espresso { background-color: #3C2F2F; }
+        .text-latte { color: #E8DBC5; }
+        .bg-cream { background-color: #F8F3ED; }
+        .bg-earth-brown { background-color: #7B5F4A; }
+        .text-earth-green { color: #5A6D5A; }
+        .border-nut-brown { border-color: #A38C7D; }
+
+        .shadow-magazine {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 1024px) {
+            .lg\:grid-col-2 {
+                grid-template-columns: 2fr 1fr;
+            }
+            .lg\:grid-col-3 {
+                grid-template-columns: 1.5fr 1fr 1.5fr;
+            }
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-cream leading-relaxed">
+
+    <!-- Header -->
+    <header class="bg-espresso text-latte py-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display font-bold tracking-wide">CooffeeBeen</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-earth-brown transition-colors duration-300">Home</a>
+                <a href="#roasts" class="hover:text-earth-brown transition-colors duration-300">Our Roasts</a>
+                <a href="#shop" class="hover:text-earth-brown transition-colors duration-300">Shop</a>
+                <a href="#visit" class="hover:text-earth-brown transition-colors duration-300">Visit Us</a>
+            </nav>
+            <button class="md:hidden text-2xl focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-espresso mt-2">
+            <nav class="flex flex-col items-center py-4 space-y-4">
+                <a href="#home" class="text-latte hover:text-earth-brown transition-colors duration-300 w-full text-center py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+                <a href="#roasts" class="text-latte hover:text-earth-brown transition-colors duration-300 w-full text-center py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Our Roasts</a>
+                <a href="#shop" class="text-latte hover:text-earth-brown transition-colors duration-300 w-full text-center py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Shop</a>
+                <a href="#visit" class="text-latte hover:text-earth-brown transition-colors duration-300 w-full text-center py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Visit Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE: Home -->
+
+    <!-- Hero / Editorial Feature Section -->
+    <section id="home" class="relative bg-earth-brown text-latte min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+        <div class="relative z-10 container mx-auto px-6 py-20 lg:py-0 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="lg:pr-16">
+                <h1 class="font-display text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Crafting Moments,<br>One Roast at a Time.
+                </h1>
+                <p class="text-xl lg:text-2xl mb-8 opacity-90 max-w-lg">
+                    At CooffeeBeen, we believe in the art of coffee. From bean to cup,
+                    we meticulously select and roast the finest beans to bring you an unparalleled experience.
+                </p>
+                <a href="#roasts" class="inline-block bg-latte text-earth-brown font-semibold py-3 px-8 rounded-full hover:bg-cream transition duration-300 text-lg">
+                    Explore Our Roasts <i class="ml-2 fas fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="hidden lg:block self-end relative -mr-16">
+                <img src="https://images.unsplash.com/photo-1507914442296-ac9bf386b16f?q=80&w=2800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coffee beans and cup" class="w-full h-auto object-cover max-h-[700px] shadow-magazine rounded-tl-3xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us - Integrated Editorial Block -->
+    <section class="py-20 bg-cream">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative p-6 bg-white shadow-magazine rounded-lg">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce7103ab?q=80&w=2836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coffee brewing process" class="w-full h-80 object-cover rounded-md mb-6">
+                <h2 class="font-display text-4xl font-bold mb-4 text-espresso">Our Story, Brewed with Passion</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    CooffeeBeen started with a simple dream: to share the world's most exquisite coffee with our community.
+                    What began as a small venture driven by a love for perfectly roasted beans has grown into a cherished local spot.
+                    We meticulously source our beans directly from sustainable farms, ensuring every cup not only tastes incredible but also supports ethical practices.
+                </p>
+            </div>
+            <div class="p-6">
+                <p class="text-xl text-gray-600 mb-8 italic">
+                    "Every bean has a journey, every roast a story. We're here to tell it."
+                </p>
+                <ul class="space-y-4 text-lg text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-seedling text-earth-green text-2xl mr-4 mt-1"></i>
+                        <span>Sustainable Sourcing: Partnering with farms committed to quality and ethical practices.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-fire-alt text-earth-brown text-2xl mr-4 mt-1"></i>
+                        <span>Artisanal Roasting: Small-batch roasting to perfection, unlocking unique flavors.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-mug-hot text-espresso text-2xl mr-4 mt-1"></i>
+                        <span>Community Focus: A warm, inviting space for coffee lovers to connect.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Roast Highlight: Colombian Dark -->
+    <section id="roasts" class="bg-espresso text-latte py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1590457187834-453744655f46?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+        <div class="relative z-10 container mx-auto px-6 grid lg:grid-col-2 gap-16 items-center">
+            <div class="p-8 bg-black bg-opacity-30 rounded-lg shadow-magazine">
+                <h2 class="font-display text-5xl lg:text-6xl font-bold mb-6 text-earth-brown">
+                    Our Signature Roast:<br>Colombian Dark
+                </h2>
+                <p class="text-xl mb-6 leading-relaxed max-w-2xl">
+                    Experience the deep, captivating essence of our Colombian Dark roast. Sourced from the high-altitude farms of Medellín,
+                    these Arabica beans are slow-roasted to a rich, dark perfection, bringing forth a symphony of complex flavors.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-lg mb-8">
+                    <div>
+                        <h3 class="font-display text-2xl font-semibold mb-2 text-latte">Flavor Profile</h3>
+                        <ul class="list-disc pl-5 opacity-90 space-y-1">
+                            <li>Rich Cocoa & Dark Chocolate</li>
+                            <li>Subtle Caramel Notes</li>
+                            <li>Hints of Roasted Almond</li>
+                            <li>Bold, Smooth Finish</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl font-semibold mb-2 text-latte">Origin Story</h3>
+                        <p class="opacity-90">
+                            Our Colombian Dark beans thrive in volcanic soil, nourished by mountain mists.
+                            This unique terroir contributes to their intense character and unparalleled depth.
+                        </p>
+                    </div>
+                </div>
+                <a href="#shop" class="inline-block bg-latte text-espresso font-semibold py-3 px-8 rounded-full hover:bg-cream transition duration-300 text-lg">
+                    Shop Colombian Dark <i class="ml-2 fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hidden lg:block relative -ml-16">
+                <img src="https://images.unsplash.com/photo-1509785307050-a40302324987?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bag of Colombian Dark coffee" class="w-full h-auto object-cover max-h-[700px] shadow-magazine rounded-br-3xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="shop" class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-5xl font-bold text-center mb-16 text-espresso">Our Carefully Curated Roasts</h2>
+
+            <div class="editorial-grid">
+                <!-- Product 1: Colombian Dark (Reiterated with price) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-magazine border border-nut-brown">
+                    <img src="https://images.unsplash.com/photo-1509785307050-a40302324987?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Colombian Dark Roast" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-3xl font-bold text-espresso mb-3">Colombian Dark</h3>
+                        <p class="text-gray-700 text-lg mb-4">
+                            Our signature bold roast. Full-bodied with notes of cocoa, dark chocolate, and a smooth, robust finish. Perfect for espresso or a strong drip.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="font-display text-4xl font-bold text-earth-brown">$18.00</span>
+                            <button class="bg-earth-brown text-latte px-6 py-2 rounded-full hover:bg-espresso transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Ethiopian Yirgacheffe (Light Roast) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-magazine border border-nut-brown">
+                    <img src="https://images.unsplash.com/photo-1571212879979-d2b38e07223b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ethiopian Yirgacheffe Light Roast" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-3xl font-bold text-espresso mb-3">Ethiopian Yirgacheffe</h3>
+                        <p class="text-gray-700 text-lg mb-4">
+                            A vibrant light roast bursting with floral aromas and bright citrus notes. Exceptionally clean and refreshing.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="font-display text-4xl font-bold text-earth-brown">$20.00</span>
+                            <button class="bg-earth-brown text-latte px-6 py-2 rounded-full hover:bg-espresso transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Brazilian Santos (Medium Roast) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-magazine border border-nut-brown">
+                    <img src="https://images.unsplash.com/photo-1600880315279-d7790b411d51?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brazilian Santos Medium Roast" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-3xl font-bold text-espresso mb-3">Brazilian Santos</h3>
+                        <p class="text-gray-700 text-lg mb-4">
+                            A classic medium roast, smooth and balanced. Expect notes of hazelnut, milk chocolate, and low acidity.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="font-display text-4xl font-bold text-earth-brown">$16.50</span>
+                            <button class="bg-earth-brown text-latte px-6 py-2 rounded-full hover:bg-espresso transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Seasonal Blend (Rotating) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-magazine border border-nut-brown">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1c833d7b3247?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Seasonal Coffee Blend" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-3xl font-bold text-espresso mb-3">Seasonal Blend</h3>
+                        <p class="text-gray-700 text-lg mb-4">
+                            Our current seasonal offering, crafted with unique beans to reflect the best of the harvest. Ask us for details!
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="font-display text-4xl font-bold text-earth-brown">$19.50</span>
+                            <button class="bg-earth-brown text-latte px-6 py-2 rounded-full hover:bg-espresso transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us / Contact Information -->
+    <section id="visit" class="py-20 bg-earth-brown text-latte">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="font-display text-5xl font-bold mb-6 text-latte">Visit Our Cozy Haven</h2>
+                <p class="text-xl mb-8 leading-relaxed max-w-lg">
+                    Step into CooffeeBeen and let the aroma of freshly roasted coffee envelop you.
+                    We're more than just a coffee shop; we're a community hub where great conversations brew.
+                </p>
+                <div class="space-y-4 text-lg">
+                    <p><i class="fas fa-map-marker-alt text-earth-green mr-3"></i> 123 Bean Street, Coffeeville, CV 10001</p>
+                    <p><i class="fas fa-phone-alt text-earth-green mr-3"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope text-earth-green mr-3"></i> info@cooffeebeen.com</p>
+                </div>
+            </div>
+            <div class="p-8 bg-black bg-opacity-30 rounded-lg shadow-magazine text-center">
+                <h3 class="font-display text-3xl font-bold mb-4 text-latte">Opening Hours</h3>
+                <ul class="text-lg space-y-2">
+                    <li>Monday - Friday: 7:00 AM - 6:00 PM</li>
+                    <li>Saturday: 8:00 AM - 5:00 PM</li>
+                    <li>Sunday: 9:00 AM - 4:00 PM</li>
+                </ul>
+                <p class="mt-8 text-sm opacity-80">We look forward to serving you the perfect cup!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-espresso text-latte py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="text-2xl font-display font-bold tracking-wide">CooffeeBeen</a>
+                <p class="text-sm mt-2">&copy; 2023 CooffeeBeen. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6 text-2xl">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram hover:text-earth-brown transition-colors duration-300"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f hover:text-earth-brown transition-colors duration-300"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="X / Twitter"><i class="fab fa-x-twitter hover:text-earth-brown transition-colors duration-300"></i></a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok hover:text-earth-brown transition-colors duration-300"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in hover:text-earth-brown transition-colors duration-300"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
